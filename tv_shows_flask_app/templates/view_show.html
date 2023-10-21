@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-4">
+    <div class="row">
+        <div class="col-8">
+        </div>
+        <div class="col-4 text-end">
+            <a href="/shows" class="btn btn-info">TV Shows</a>
+            <form action="/logout" method="POST" class="d-inline">
+                <button class="btn btn-danger">Logout</button>
+            </form>
+        </div>
+    </div>
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-8">
+                    <h1 class="card-title">{{ show.title }}</h1>
+                    <label>Release Date:</label>
+                    <p>{{ show.release_date }}</p>
+                    <label>Description:</label>
+                    <p>{{ show.description }}</p>
+                </div>
+                <div class="col-4 text-end">
+                    <p class="mb-0">Liked by: {{ shows|length }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-start">
+                    <p>Posted By: {{ show.creator.first_name }} {{ show.creator.last_name }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
